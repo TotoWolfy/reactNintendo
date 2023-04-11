@@ -19,6 +19,7 @@ import ExhibitorListView from "./views/ExhibitorListView";
 import EventListView from "./views/EventListView";
 import ModifProfilView from "./views/ModifProfilView";
 import ExhibitorSpaceConnectedView from "./views/ExhibitorSpaceConnectedView";
+import ExhibitorSpaceView from "./views/ExhibitorSpaceView";
 
 import Container from "@mui/material/Container";
 
@@ -51,7 +52,7 @@ export default function App() {
             <Route path="/dispo" element={<DispoView />} />
             <Route path="/Plan" element={<PlanView />} />
 
-            <Route path="/ExhibitorSpace" element={<LoginView />} />
+            <Route path="/ExhibitorSpace" element={<ExhibitorSpaceView />} />
             <Route path="/ExhibitorList" element={<ExhibitorListView />} />
             <Route path="/EventList" element={<EventListView />} />
             <Route path="/ident" element={<IdentView />} />
