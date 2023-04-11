@@ -85,37 +85,37 @@ function ResponsiveAppBar() {
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
-                <Link to={"/produit"}>
+                <Link to={"/"}>
                   <Typography textAlign="center">Accueil</Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Link to={"/produit"}>
+                <Link to={"/StandList"}>
                   <Typography textAlign="center">Les Stands</Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Link to={"/prix"}>
+                <Link to={"/ExhibitorList"}>
                   <Typography textAlign="center">Les Exposant</Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Link to={"/prix"}>
+                <Link to={"/EventList"}>
                   <Typography textAlign="center">Les Events</Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Link to={"/produit"}>
+                <Link to={"/TicketOffice"}>
                   <Typography textAlign="center">Billeterie</Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Link to={"/produit"}>
+                <Link to={"/ExhibitorSpace"}>
                   <Typography textAlign="center">Escpace Exposant</Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Link to={"/produit"}>
+                <Link to={"/MyCart"}>
                   <Typography textAlign="center">Mon Panier</Typography>
                 </Link>
               </MenuItem>

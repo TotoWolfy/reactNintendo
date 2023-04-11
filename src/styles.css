@@ -32,3 +32,10 @@ a:visited {
   display: flex;
   justify-content: center;
 }
+
+.ticketOfficeMario{
+position: absolute;
+top: 100px;
+  left: 30px;
+  z-index: 1;
+}
