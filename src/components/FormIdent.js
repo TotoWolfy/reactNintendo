@@ -9,6 +9,9 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
+
+
+
 import { Link } from "react-router-dom";
 
 export default function FormIdent() {
@@ -64,6 +67,15 @@ export default function FormIdent() {
               <TextField
                 required
                 fullWidth
+                id="pseudo"
+                label="Pseudo"
+                name="Pseudo"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
                 id="email"
                 label="Mail"
                 name="email"
@@ -79,6 +91,49 @@ export default function FormIdent() {
                 type="password"
                 id="password"
                 autoComplete="new-password"
+              />
+              </Grid>
+              <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                name="confirmpassword"
+                label="Confirmation Mot de passe"
+                type="password"
+                id="confirmpassword"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                name="phone"
+                label="Telephone"
+                type="number"
+                id="password"
+
+              />
+            </Grid>
+            <Grid item xs={12}>
+            <form  noValidate>
+  <TextField
+    id="date"
+    label="Date de naissance"
+    type="date"
+    defaultValue="1998-07-26"
+    InputLabelProps={{
+      shrink: true,
+    }}
+  />
+</form>
+</Grid>
+<Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                id="photo"
+                label="photo (lien vers la photo)"
+                name="photo"
               />
             </Grid>
           </Grid>
