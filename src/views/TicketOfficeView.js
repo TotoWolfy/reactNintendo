@@ -8,7 +8,7 @@ export default function TicketOfficeView() {
     <div>
       <div className="TicketOfficeTopDiv">
         <img
-        className="ticketOfficeMario"
+          className="ticketOfficeMario"
           src="https://cdn.discordapp.com/attachments/1048037393728548915/1095256414399778856/mario-background.png"
         />
         <div id="ticketOfficeTitle">
