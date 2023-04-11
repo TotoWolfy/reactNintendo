@@ -18,6 +18,7 @@ import Footer from "./views/Footer";
 import ExhibitorListView from "./views/ExhibitorListView";
 import EventListView from "./views/EventListView";
 import ModifProfilView from "./views/ModifProfilView";
+import ExhibitorSpaceConnectedView from "./views/ExhibitorSpaceConnectedView";
 
 import Container from "@mui/material/Container";
 
@@ -60,6 +61,7 @@ export default function App() {
             <Route path="/logout" element={<LogoutView />} />
             <Route path="/TicketOffice" element={<TicketOfficeView />} />
             
+            <Route path="/ExhibitorSpaceConnected" element={<ExhibitorSpaceConnectedView />} />
             <Route path="/ModifProfil" element={<ModifProfilView />} />
           </Routes>
         </Container>
