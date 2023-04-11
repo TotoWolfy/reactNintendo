@@ -146,7 +146,7 @@ export default function FormIdent() {
             Valider
           </Button>
           <Grid container justifyContent="flex-end">
-            <Link to="/login">
+            <Link to="/ExhibitorSpace">
               <Grid item>Vous avez un compte ? Connexion</Grid>
             </Link>
           </Grid>
