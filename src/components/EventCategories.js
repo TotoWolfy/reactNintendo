@@ -40,7 +40,6 @@ export default function EventCategories(props) {
         listCategorie.splice(index, 1);
     }
         }
-        
         props.handler(listCategorie)
     }
     return (

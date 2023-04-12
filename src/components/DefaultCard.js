@@ -49,16 +49,6 @@ export default function DefaultCard(props) {
         <Button size="small" variant="contained" color="primary">
           {props.button}
         </Button>
-        <a href="TicketOffice">
-        <Button size="small" variant="contained" color="warning">
-          modifier
-        </Button>
-        </a>
-        <a href="TicketOffice">
-        <Button size="small" variant="contained" color="warning">
-          supprimer
-        </Button>
-        </a>
       </CardActions>
     </Card>
     </a>
