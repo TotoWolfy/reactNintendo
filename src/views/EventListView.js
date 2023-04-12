@@ -5,9 +5,9 @@ import { FormGroup } from "@mui/material"
 import { useState } from "react"
 
 export default function EventListView() {
-    const [categories, setCategorie ]= useState([])
+    const [categories, setCategories ]= useState([])
     function handler(data){
-        setCategorie(data)
+        setCategories(data)
     }
     return (
         <div>
@@ -19,7 +19,7 @@ export default function EventListView() {
                 </FormGroup>
             </FormControl>
             <div className="eventList">
-                <EventList categorie={categories}/>
+                <EventList categories={categories}/>
             </div>
         </div>
     )

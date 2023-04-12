@@ -42,6 +42,7 @@ export default function EventCategories(props) {
         }
         
         props.handler(listCategorie)
+        console.log(listCategorie)
     }
     return (
         eventCategorie.map(item =>
