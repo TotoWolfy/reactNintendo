@@ -8,8 +8,7 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-
-
+import { useState, useEffect } from "react";
 
 
 import { Link } from "react-router-dom";
@@ -18,12 +17,45 @@ export default function FormIdent() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password")
-    });
+    newExhibitor(data)
   };
-
+   const [exhibitorCategorie, setExhibitorCategorie] = useState([]);
+  function whenOpen(){
+    const url2 = "https://cabrol.alwaysdata.net/api/saeExhibitorCategorie"
+    
+        const fetchOptions = {
+            method: "GET"
+        };
+        fetch(url2, fetchOptions)
+        .then((response) => {
+            return response.json();
+        })
+        .then((dataJSON) => {
+            setExhibitorCategorie(dataJSON);
+        })
+        .catch((error) => console.log(error));}
+const url = "https://cabrol.alwaysdata.net/api/saeExhibitor"
+    function newExhibitor(data) {
+        const fetchOptions = {
+          headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+            method: "POST",
+            body: JSON.stringify({mail: data.get("email"), password: data.get("password"), phone: data.get("phone"),catName: data.get("categorie"), firstName: data.get("firstName"), lastName: data.get("lastName"), pseudo: data.get("Pseudo"),photoExhib: data.get("photo"), description: data.get("description") })
+        };
+        fetch(url, fetchOptions)
+            .then((response) => {
+                return response.json();
+            })
+            .then((dataJSON) => {
+                console.log(dataJSON);
+            })
+            .catch((error) => console.log(error));
+    };
+    useEffect(()=> {
+        whenOpen()
+        }, [])
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -76,6 +108,25 @@ export default function FormIdent() {
               <TextField
                 required
                 fullWidth
+                id="categorie"
+                select
+                 SelectProps={{
+            native: true,
+          }}
+                label="categorie"
+                name="categorie"
+              >
+                {exhibitorCategorie.map((option) => (
+            <option key={option.catName} value={option.catName}>
+              {option.catName}
+            </option>
+          ))}
+              </TextField>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
                 id="email"
                 label="Mail"
                 name="email"
@@ -110,23 +161,20 @@ export default function FormIdent() {
                 name="phone"
                 label="Telephone"
                 type="number"
-                id="password"
+                id="phone"
+
+              />
+              </Grid>
+              <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                name="description"
+                label="description"
+                id="description"
 
               />
             </Grid>
-            <Grid item xs={12}>
-            <form  noValidate>
-  <TextField
-    id="date"
-    label="Date de naissance"
-    type="date"
-    defaultValue="1998-07-26"
-    InputLabelProps={{
-      shrink: true,
-    }}
-  />
-</form>
-</Grid>
 <Grid item xs={12}>
               <TextField
                 required

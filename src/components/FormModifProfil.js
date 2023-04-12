@@ -50,6 +50,7 @@ export default function FormModifProfil() {
                 fullWidth
                 id="firstName"
                 label="Prénom"
+                value="yo"
                 autoFocus
               />
             </Grid>
@@ -86,18 +87,6 @@ export default function FormModifProfil() {
               <TextField
                 required
                 fullWidth
-                name="password"
-                label="Mot de passe"
-                type="password"
-                id="password"
-                autoComplete="new-password"
-              />
-              
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
                 name="phone"
                 label="Telephone"
                 type="number"
@@ -105,19 +94,6 @@ export default function FormModifProfil() {
 
               />
             </Grid>
-            <Grid item xs={12}>
-            <form  noValidate>
-  <TextField
-    id="date"
-    label="Date de naissance"
-    type="date"
-    defaultValue="1998-07-26"
-    InputLabelProps={{
-      shrink: true,
-    }}
-  />
-</form>
-</Grid>
 <Grid item xs={12}>
               <TextField
                 required
@@ -134,13 +110,8 @@ export default function FormModifProfil() {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            Valider
+            Modifier
           </Button>
-          <Grid container justifyContent="flex-end">
-            <Link to="/ExhibitorSpace">
-              <Grid item>Vous avez un compte ? Connexion</Grid>
-            </Link>
-          </Grid>
         </Box>
       </Box>
     </Container>
