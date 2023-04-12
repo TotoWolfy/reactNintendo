@@ -40,9 +40,7 @@ export default function EventCategories(props) {
         listCategorie.splice(index, 1);
     }
         }
-        
         props.handler(listCategorie)
-        console.log(listCategorie)
     }
     return (
         eventCategorie.map(item =>

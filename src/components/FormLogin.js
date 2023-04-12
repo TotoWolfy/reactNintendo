@@ -17,12 +17,31 @@ export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password")
-    });
+    ExhibitorCo(data);
+    console.log(JSON.stringify({email: data.get("email"), password: data.get("password")}));
   };
-
+const url = "https://cabrol.alwaysdata.net/api/saeExhibitorCo"
+    function ExhibitorCo(data) {
+        const fetchOptions = {
+          headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+            method: "POST",
+            body: JSON.stringify({mail: data.get("email"), password: data.get("password")})
+        };
+        fetch(url, fetchOptions)
+            .then((response) => {
+                return response.json();
+            })
+            .then((dataJSON) => {
+                console.log(dataJSON);
+                if(dataJSON.status == 1){
+                  let Context = React.createContext({Logged: true});
+                }
+            })
+            .catch((error) => console.log(error));
+    }
   return (
     <Container component="main" maxWidth="xs">
       <Box

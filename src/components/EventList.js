@@ -18,7 +18,7 @@ export default function EventList(props){
             return response.json();
         })
         .then((dataJSON) => {
-            setEvent(dataJSON.filter(item => item.catNameEv == categories));
+            setEvent(dataJSON);
         })
         .catch((error) => console.log(error));
     }
@@ -26,12 +26,15 @@ export default function EventList(props){
         setCategories(props.categories)
         getEvent()
         }, [props.categories])
+    if(categories[0]){
+        event.filter(item => item.catNameEv == categories)
+        console.log(categories)
     return(
        
         event.map(item =>
             <div className="eventCard">
-          <DefaultCard title={item.title} description={item.catNameEv} description2={categories}  button={button} img={item.photoEv} />
+          <DefaultCard title={item.title} description={item.catNameEv} description2={categories} href={"Event/"+item.idEvent}  button={button} img={item.photoEv} />
             </div>)
         )
-
+    }
 }
