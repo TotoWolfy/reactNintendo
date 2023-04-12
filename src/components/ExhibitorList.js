@@ -29,7 +29,7 @@ export default function ExhibitorList(){
         
         exhibitor.map(item =>
             <div className="ExhibitorCard">
-          <DefaultCard title={item.pseudo} img={item.photoExhib} description={item.description} description2={item.catName}  button={button} />
+          <DefaultCard title={item.pseudo} href={"Exhibitor/"+item.idExhibitor} img={item.photoExhib} description={item.description} description2={item.catName}  button={button} />
             </div>)
         )
 
